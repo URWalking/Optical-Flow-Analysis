@@ -28,10 +28,6 @@ For full methodology, dataset details, and results see the [paper](https://doi.o
 
 ## Quickstart
 
-```bash
-pip install opencv-python numpy pandas matplotlib seaborn scikit-learn Pillow
-```
-
 ```python
 from optical_flow.ZoneFlowPredictor import Predictor
 
