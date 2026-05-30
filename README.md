@@ -64,7 +64,6 @@ Recording setup: HoloLens 2 (6DoF ground truth) + Google Pixel 9 (video + IMU), 
 
 - 10 participants · 27 trajectories · 3 zone types
 - 176 m reference track + 399 m complex track
-- Initial release: one full session available at [URWalking/Optical-Flow-Analysis](https://github.com/URWalking/Optical-Flow-Analysis)
 
 <br clear="right">
 
