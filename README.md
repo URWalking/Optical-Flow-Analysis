@@ -10,7 +10,7 @@
 ![Status](https://img.shields.io/badge/status-published-brightgreen)
 ![Conference](https://img.shields.io/badge/GeoAI_2026-oral_presentation-blue)
 
-· Noah Meißner\*, Tim Sieber\*, Bernd Ludwig · University of Regensburg
+**[Paper (GeoAI 2026)]()** · **[Dataset]()** · Noah Meißner\*, Tim Sieber\*, Bernd Ludwig · University of Regensburg
 
 </div>
 
