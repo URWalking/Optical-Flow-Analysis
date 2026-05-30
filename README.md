@@ -187,4 +187,4 @@ If you use this code or dataset, please cite:
 
 ## Related Work
 
-This repository accompanies the URWalking indoor navigation system described in [Ludwig et al. 2023](https://doi.org/10.1007/s13218-022-00795-1). The IMU baseline we improve upon is [Jackermeier & Ludwig 2018](https://doi.org/10.1080/17489725.2018.1558812).
+This repository accompanies the URWalking indoor navigation system described in [Ludwig et al. 2023](https://doi.org/10.1007/s13218-022-00795-1). The IMU baseline we improve upon is [Jackermeier & Ludwig 2018](https://www.tandfonline.com/doi/abs/10.1080/17489725.2018.1541330).
