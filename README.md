@@ -11,7 +11,7 @@
 ![Conference](https://img.shields.io/badge/GeoAI_2026-oral_presentation-blue)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-**Published at [GeoAI 2026](https://doi.org/10.xxxx/xxxxx) — Oral Presentation**
+**Published at [GeoAI 2026](https://doi.org/10.xxxx/xxxxx) — Oral Presentation**  
 Noah Meißner\*, Tim Sieber\*, Bernd Ludwig — Chair of Information Science, University of Regensburg
 
 </div>
@@ -43,6 +43,14 @@ flowchart TD
     G -->|−t ≤ signal ≤ +t| J[Straight ahead]
 ```
 
+The pipeline in action — keypoint tracking, raw horizontal signal, and smoothed zone-level classification:
+
+![Lucas-Kanade optical flow pipeline: keypoint tracking on corridor frames, raw signal extraction, and smoothed threshold-based classification](docs/pipeline_visualisation.png)
+
+How the zone mean determines the predicted direction across all three classes:
+
+![Zone-based direction prediction showing right, straight, and left turn examples with trajectory overlays and flow signal per zone](docs/prediction_explanation.png)
+
 ### Parameters
 
 | Parameter | Optimal | Description |
@@ -60,6 +68,8 @@ Hyperparameters optimised via **Leave-One-Route-Type-Out Cross-Validation (LORTO
 
 ### Recording Setup
 
+<img src="docs/record_setup.jpg" alt="Recording apparatus: participant wearing HoloLens 2 and chest-mounted Raspberry Pi 5, holding a Google Pixel 9" width="340" align="right">
+
 | Device | Role | Data Captured |
 |--------|------|--------------|
 | **Microsoft HoloLens 2** | Ground-truth reference | 6DoF pose via World-Locking SLAM, ~30 fps |
@@ -68,6 +78,8 @@ Hyperparameters optimised via **Leave-One-Route-Type-Out Cross-Validation (LORTO
 
 Loop closure error: **0.05 % (≈ 8.8 cm)** on the 176 m reference track — sufficient for PDR annotation without offline laser-scan registration.
 
+<br clear="right">
+
 ### Participants & Routes
 
 - **10 participants**, M_age = 23.7 years
@@ -75,9 +87,17 @@ Loop closure error: **0.05 % (≈ 8.8 cm)** on the 176 m reference track — suf
 - **3 zone types**: Confined Space (narrow corridors), Open Space (atrium), Transition Zone (courtyard)
 - Routes: 176 m reference track + 399 m complex track
 
+All recorded trajectories overlaid on the building floor plan, with decision zones (yellow circles) highlighted:
+
+![All recorded participant trajectories overlaid on the University of Regensburg building floor plan, with yellow circles marking the 8 decision zones](docs/visualisation_trajectories.png)
+
 ---
 
 ## Results
+
+The smoothed optical flow signal over a full reference trajectory — peaks at turn zones (green/pink) stand out clearly from straight-segment noise:
+
+![Optical flow signal over a full 160-second reference trajectory, showing distinct peaks at corner and door zones against a flat noise baseline](docs/visualisation_optical_flow.png)
 
 ### LORTO-CV Results (r = 4.5 m, t = 1.0)
 
@@ -146,6 +166,7 @@ Optical-Flow-Analysis/
 │   │   └── calc_ego_perspective.py # Egocentric coordinate conversion
 │   └── sync/
 │       └── synchronise.py          # Cross-device timestamp alignment (17 ms tolerance)
+├── docs/                           # Figures for this README
 ├── Dataset/
 │   ├── raw_data/participant_{1-10}/  # Per-participant CSV + image frames
 │   ├── merged_data/                  # Preprocessed training set
@@ -187,4 +208,4 @@ If you use this code or dataset, please cite:
 
 ## Related Work
 
-This repository accompanies the URWalking indoor navigation system described in [Ludwig et al. 2023](https://doi.org/10.1007/s13218-022-00795-1). The IMU baseline we improve upon is [Jackermeier & Ludwig 2018](https://www.tandfonline.com/doi/abs/10.1080/17489725.2018.1541330).
+This repository accompanies the URWalking indoor navigation system described in [Ludwig et al. 2023](https://doi.org/10.1007/s13218-022-00795-1). The IMU baseline we improve upon is [Jackermeier & Ludwig 2018](https://doi.org/10.1080/17489725.2018.1558812).
